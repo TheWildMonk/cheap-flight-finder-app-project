@@ -10,7 +10,8 @@ for each_city in sheet_data["prices"]:
     if each_city["iataCode"] == "":
         # Flight search object definition
         flight_search_manager = FlightSearch(city=each_city["city"])
-        each_city["iataCode"] = flight_search_manager.iataCode
+        location_data = flight_search_manager.kiwi_get_location()
+        each_city["iataCode"] = location_data["locations"][0]["code"]
         sheet_data_manager.sheety_put_request(each_city["city"], each_city["iataCode"],
                                               each_city["lowestPrice"], each_city["id"])
     else:
