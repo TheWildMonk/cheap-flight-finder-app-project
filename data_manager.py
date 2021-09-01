@@ -40,3 +40,14 @@ class DataManager:
                 ]
             }
             return data
+
+    def sheety_put_request(self, city: str, iata_code: str, lowest_price: str, row_id: int):
+        params = {
+            "price": {
+                "city": city,
+                "iataCode": iata_code,
+                "lowestPrice": lowest_price,
+            }
+        }
+        response = requests.put(url=f"{self.ENDPOINT}/{row_id}", json=params)
+        print(response.text)
