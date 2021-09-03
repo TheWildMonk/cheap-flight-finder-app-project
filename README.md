@@ -10,6 +10,8 @@ then a pre-set price in a Google sheet. </br> </br>
 os <br/>
 python-dotenv <br/>
 requests <br/>
+datetime <br/>
+dateutil <br/>
 
 ### <u>**API:**</u> <br />
 [Kiwi Partners Flight Search API](https://partners.kiwi.com/) <br/>
@@ -22,4 +24,3 @@ requests <br/>
 Cheap Flight Finder App Project<br/>
 100 Days of Code - The Complete Python Pro Bootcamp 2021 <br/>
 Day 39 - Intermediate+ Capstone Part 1: Flight Deal Finder <br/>
-Day 40 - Intermediate+ Capstone Part 2: Flight Club
