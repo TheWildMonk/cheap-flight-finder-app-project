@@ -15,18 +15,17 @@ class DataManager:
         self.ENDPOINT = f"https://api.sheety.co/{SHEETY_API_KEY}/flightDeals/prices"
 
     def sheety_get_response(self):
-        """Get response function for Sheety API"""
+        """Function to get the response from google sheet"""
         response = requests.get(url=self.ENDPOINT)
         response.raise_for_status()
         data = response.json()
         return data
 
-    def sheety_put_request(self, city: str, iata_code: str, lowest_price: str, row_id: int):
+    def sheety_put_request(self, iata_code: str, row_id: int):
+        """Function to update iata code"""
         params = {
             "price": {
-                "city": city,
                 "iataCode": iata_code,
-                "lowestPrice": lowest_price,
             }
         }
         response = requests.put(url=f"{self.ENDPOINT}/{row_id}", json=params)

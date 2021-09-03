@@ -17,11 +17,11 @@ FLY_FROM = "DAC"
 # Variables for time duration of flight search
 date_from = datetime.today().date() + timedelta(days=1)
 date_to = date_from + relativedelta(months=6)
-return_from = (date_from + timedelta(days=7)).strftime("%d/%m/%Y")
-return_to = (date_from + timedelta(days=28)).strftime("%d/%m/%Y")
 
 
 class FlightData:
+    """A class to represent all the functionalities
+    related to flight data"""
     def __init__(self):
         self.ENDPOINT = "https://tequila-api.kiwi.com"
         self.HEADER = {
@@ -29,6 +29,8 @@ class FlightData:
         }
 
     def flight_search_get_request(self, iata_code: str):
+        """Function for getting all the flight data
+        for desired destination"""
         params = {
             "fly_from": FLY_FROM,
             "fly_to": iata_code,
