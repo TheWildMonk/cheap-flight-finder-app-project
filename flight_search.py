@@ -1,11 +1,12 @@
 # Import necessary libraries
 import os
-
 import requests
 from dotenv import load_dotenv
 
 load_dotenv(dotenv_path="/Volumes/Workstation/Learning Center/Data Science/"
                         "100 Days of Code - Complete Python Pro Bootcamp 2021/Projects/@CREDENTIALS/.env")
+
+# Constants
 KIWI_API_KEY = os.getenv("KIWI_API_KEY")
 
 
